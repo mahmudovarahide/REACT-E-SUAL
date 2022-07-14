@@ -25,7 +25,7 @@ class Header extends Component {
                   <NavLink to="/discover" className="nav-link">Kəşfet</NavLink>
                 </li>
                 <li className="nav-item">
-                  <a href="about.html" className="nav-link">Haqqımızda</a>
+                  <NavLink to="/about" className="nav-link">Haqqımızda</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to='/contact' className="nav-link">Əlaqə</NavLink>
@@ -33,7 +33,7 @@ class Header extends Component {
               </ul>
             </div>
             <div className="register mt-3 me-5">
-              <a href="register.html">Daxil ol</a>
+              <NavLink to="/login">Daxil ol</NavLink>
             </div>
           </div>
         </div>

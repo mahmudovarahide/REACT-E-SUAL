@@ -7,7 +7,6 @@
     background-color: $white;
     z-index: 2;
     .container-fluid {
-        // padding-right: 10px;
         .nav {
             padding-left: 100px;
             .serach-box {
@@ -222,6 +221,43 @@
                         width: 100%;
                         text-align: center;
                         @include border-radius;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    padding: 0px 0 20px 0;
+    .container-fluid {
+        padding: 0 30px 0 30px;
+        .row {
+            .col-12 {
+                .d-flex {
+                    ul {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 30px;
+                        li {
+                            list-style: none;
+                            a {
+                                color: $gray;
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 30px;
+                                @include transition;
+                                &:hover {
+                                    color: $purple;
+                                }
+                            }
+                        }
+                    }
+                    a {
+                        color: $gray;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 30px;
                     }
                 }
             }

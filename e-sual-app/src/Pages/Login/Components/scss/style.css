@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,700;0,800;0,900;1,300;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style: none;
+}
+
+.register {
+  margin-top: 130px;
+}
+
+.register h3 {
+  font-weight: bold;
+}
+
+.register .border-register {
+  border-right: 1px solid #F2F2F2 !important;
+}
+
+.register form {
+  width: 65%;
+  height: 100%;
+}
+
+.register form .show-hide-pass {
+  width: 100%;
+  position: relative;
+}
+
+.register form .show-hide-pass i {
+  position: absolute;
+  top: 23px;
+  right: 10px;
+}
+
+.register form .show-hide-pass .pass-msg {
+  font-size: 12px;
+}
+
+.register form input {
+  background-color: #F6F8FE;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: none;
+  margin-top: 15px;
+  padding: 7px 0 7px 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.register form input::-webkit-input-placeholder {
+  font-size: 13px;
+}
+
+.register form input:-ms-input-placeholder {
+  font-size: 13px;
+}
+
+.register form input::-ms-input-placeholder {
+  font-size: 13px;
+}
+
+.register form input::placeholder {
+  font-size: 13px;
+}
+
+.register form .login {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 7px 0 7px 10px;
+  background-color: #586EFF;
+  color: #fff;
+  text-align: center;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+}
+
+.register form .login:hover {
+  letter-spacing: 2px;
+}
+
+.register form select {
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 3px 0 3px 10px;
+  background-color: #F6F8FE;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  outline: none;
+}
+
+.register form span.loginwith {
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.register form span.loginwith::before {
+  content: "";
+  display: inline-block;
+  width: 42%;
+  height: 1px;
+  background: #ABAABA;
+  vertical-align: middle;
+  margin-right: 3%;
+}
+
+.register form span.loginwith::after {
+  content: "";
+  display: inline-block;
+  width: 45%;
+  height: 1px;
+  background: #ABAABA;
+  vertical-align: middle;
+  margin-left: 3%;
+}
+
+.register form label {
+  margin-top: 12px;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.register form label span {
+  color: #586EFF;
+}
+/*# sourceMappingURL=style.css.map */

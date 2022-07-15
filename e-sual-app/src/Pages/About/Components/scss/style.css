@@ -19,4 +19,17 @@ li {
 .about {
   margin-top: 100px;
 }
+
+.about .map-area-frame {
+  height: 400px;
+}
+
+.about .map-area-frame iframe {
+  height: 100%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
 /*# sourceMappingURL=style.css.map */

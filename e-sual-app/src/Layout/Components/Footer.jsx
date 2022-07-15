@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom'
 
 function Footer() {
   return (
-    <section class="footer mt-5">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="d-flex justify-content-between">
+    <section className="footer mt-5">
+    <div className="container-fluid">
+        <div className="row">
+            <div className="col-12">
+                <div className="d-flex justify-content-between">
                     <ul>
                         <li><NavLink to="/">Ana səhifə</NavLink></li>
                         <li><NavLink to="/about">Haqqımızda</NavLink></li>

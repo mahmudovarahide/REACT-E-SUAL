@@ -1,0 +1,46 @@
+@media screen and (max-width:996px) {
+    .home {
+        .container {
+            .row {
+                .home-search {
+                    display: none;
+                }
+                .home-contents {
+                    width: 100%;
+                    padding-left: 2px !important;
+                    .question-box {
+                        width: 100% !important;
+                        h1 {
+                            font-size: 20px !important;
+                            line-height: 35px !important;
+                        }
+                        .button-boxes {
+                            gap: 10px !important;
+                            .button-comment,
+                            .favorite-box,
+                            .share-box,
+                            .notifocation-box {
+                                span {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .home {
+        padding: 0 !important;
+        .container {
+            .row {
+                .home-contents {
+                    padding: 19px !important;
+                }
+            }
+        }
+    }
+}

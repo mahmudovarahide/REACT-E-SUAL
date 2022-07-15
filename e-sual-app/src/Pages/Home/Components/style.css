@@ -16,7 +16,388 @@ li {
   list-style: none;
 }
 
+@media screen and (max-width: 996px) {
+  .home .container .row .home-search {
+    display: none;
+  }
+  .home .container .row .home-contents {
+    width: 100%;
+    padding-left: 2px !important;
+  }
+  .home .container .row .home-contents .question-box {
+    width: 100% !important;
+  }
+  .home .container .row .home-contents .question-box h1 {
+    font-size: 20px !important;
+    line-height: 35px !important;
+  }
+  .home .container .row .home-contents .question-box .button-boxes {
+    gap: 10px !important;
+  }
+  .home .container .row .home-contents .question-box .button-boxes .button-comment span,
+  .home .container .row .home-contents .question-box .button-boxes .favorite-box span,
+  .home .container .row .home-contents .question-box .button-boxes .share-box span,
+  .home .container .row .home-contents .question-box .button-boxes .notifocation-box span {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home {
+    padding: 0 !important;
+  }
+  .home .container .row .home-contents {
+    padding: 19px !important;
+  }
+}
+
 .home {
-  margin-top: 100px;
+  position: relative;
+  margin-top: 80px;
+  padding: 30px 0;
+}
+
+.home .container .row .home-search {
+  background-color: #F6F8FE;
+  height: auto;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  overflow-x: auto;
+}
+
+.home .container .row .home-search form {
+  padding-top: 20px;
+}
+
+.home .container .row .home-search form input {
+  width: 100%;
+  border: none;
+  background: #FFFFFF;
+  border-radius: 50px;
+  padding: 2px 0px 3px 10px;
+}
+
+.home .container .row .home-search form input::-webkit-input-placeholder {
+  font-size: 13px;
+}
+
+.home .container .row .home-search form input:-ms-input-placeholder {
+  font-size: 13px;
+}
+
+.home .container .row .home-search form input::-ms-input-placeholder {
+  font-size: 13px;
+}
+
+.home .container .row .home-search form input::placeholder {
+  font-size: 13px;
+}
+
+.home .container .row .home-search form input:focus {
+  outline: none;
+  font-size: 13px;
+}
+
+.home .container .row .home-search ul {
+  padding-top: 20px;
+  padding-left: 0 !important;
+}
+
+.home .container .row .home-search ul li {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.home .container .row .home-search ul li a {
+  color: #000;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 30px;
+  padding-right: 10px;
+}
+
+.home .container .row .home-search ul li p {
+  color: #ABAABA;
+}
+
+.home .container .row .home-contents {
+  padding-left: 40px;
+}
+
+.home .container .row .home-contents .profile-contents .img-box {
+  width: 100px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.home .container .row .home-contents .profile-contents .profile-names h3 {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.home .container .row .home-contents .profile-contents .profile-names .green-button-profile {
+  background-color: #27B389;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.home .container .row .home-contents .profile-contents .profile-names .purple-button-profile {
+  background-color: #586EFF;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: #fff;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.home .container .row .home-contents .profile-contents .green-button-profile {
+  background-color: #27B389;
+  border: none;
+}
+
+.home .container .row .home-contents .profile-contents .follow-button-box {
+  padding-left: 20px;
+}
+
+.home .container .row .home-contents .profile-contents .follow-button-box button {
+  background-color: #586EFF;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: #fff;
+  padding: 5px 10px;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.home .container .row .home-contents .profile-contents .description-box {
+  padding-left: 20px;
+}
+
+.home .container .row .home-contents .profile-contents .description-box p {
+  line-height: 28px;
+}
+
+.home .container .row .home-contents .post-share-form h1 {
+  color: #586EFF;
+  font-weight: bold;
+}
+
+.home .container .row .home-contents .post-share-form form .category-box label {
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.home .container .row .home-contents .post-share-form form .category-box input {
+  background-color: #F6F8FE;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: none;
+  padding: 4px 7px;
+  outline: none;
+}
+
+.home .container .row .home-contents .post-share-form form .category-box input::-webkit-input-placeholder {
+  font-size: 13px;
+}
+
+.home .container .row .home-contents .post-share-form form .category-box input:-ms-input-placeholder {
+  font-size: 13px;
+}
+
+.home .container .row .home-contents .post-share-form form .category-box input::-ms-input-placeholder {
+  font-size: 13px;
+}
+
+.home .container .row .home-contents .post-share-form form .category-box input::placeholder {
+  font-size: 13px;
+}
+
+.home .container .row .home-contents .post-share-form form .category-box .button-comment {
+  padding-left: 10px;
+}
+
+.home .container .row .home-contents .post-share-form form .category-box .button-comment button {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: #586EFF;
+  border: none;
+  padding: 4px 7px;
+}
+
+.home .container .row .home-contents .post-share-form form .category-box .button-comment button a {
+  color: #fff;
+}
+
+.home .container .row .home-contents .post-share-form form .category-box .text-area .form-control {
+  background-color: #F6F8FE;
+  outline: none !important;
+  border: none;
+  resize: none;
+  height: 250px;
+  font-size: 14px;
+}
+
+.home .container .row .home-contents .post-share-form form .category-box .share-category button {
+  background-color: #586EFF;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: #fff;
+  border: none;
+  padding: 5px 20px;
+}
+
+.home .container .row .home-contents .question-box {
+  width: 95%;
+  height: auto;
+}
+
+.home .container .row .home-contents .question-box .answer {
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.home .container .row .home-contents .question-box h1 {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 63px;
+}
+
+.home .container .row .home-contents .question-box .text-box h6 {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.home .container .row .home-contents .question-box .text-box p {
+  color: #ABAABA;
+  font-size: 12px;
+}
+
+.home .container .row .home-contents .question-box p {
+  font-size: 14px;
+  line-height: 28px;
+  text-align: justify;
+}
+
+.home .container .row .home-contents .question-box .button-boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+
+.home .container .row .home-contents .question-box .button-boxes .arrow-up i {
+  text-align: center;
+  padding: 8px 10px 8px 10px;
+  background-color: #11A239;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.home .container .row .home-contents .question-box .button-boxes .arrow-up p {
+  padding-left: 5px;
+  font-size: 13px;
+}
+
+.home .container .row .home-contents .question-box .button-boxes .arrow-down i {
+  text-align: center;
+  padding: 8px 10px 8px 10px;
+  background-color: #FF5858;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.home .container .row .home-contents .question-box .button-boxes .arrow-down p {
+  padding-left: 5px;
+  font-size: 13px;
+}
+
+.home .container .row .home-contents .question-box .button-boxes .button-comment a {
+  color: #fff;
+  background-color: #586EFF;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.home .container .row .home-contents .question-box .button-boxes .favorite-box a {
+  color: #fff;
+  background-color: #862BCE;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.home .container .row .home-contents .question-box .button-boxes .share-box a {
+  color: #fff;
+  background-color: #586EFF;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.home .container .row .home-contents .question-box .button-boxes .share-box-2 {
+  border: 1px solid #F2F2F2;
+  padding: 5px 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.home .container .row .home-contents .question-box .button-boxes .notifocation-box a {
+  color: #fff;
+  background-color: #162480;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.home .container .row .home-contents .question-box .border-bottom {
+  width: 100%;
+  height: 2px;
+  background-color: #F2F2F2;
+}
+
+.home .w-55px {
+  width: 55px;
 }
 /*# sourceMappingURL=style.css.map */

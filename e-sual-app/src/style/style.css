@@ -16,41 +16,6 @@ li {
   list-style: none;
 }
 
-@media screen and (max-width: 996px) {
-  .home .container .row .home-search {
-    display: none;
-  }
-  .home .container .row .home-contents {
-    width: 100%;
-    padding-left: 2px !important;
-  }
-  .home .container .row .home-contents .question-box {
-    width: 100% !important;
-  }
-  .home .container .row .home-contents .question-box h1 {
-    font-size: 20px !important;
-    line-height: 35px !important;
-  }
-  .home .container .row .home-contents .question-box .button-boxes {
-    gap: 10px !important;
-  }
-  .home .container .row .home-contents .question-box .button-boxes .button-comment span,
-  .home .container .row .home-contents .question-box .button-boxes .favorite-box span,
-  .home .container .row .home-contents .question-box .button-boxes .share-box span,
-  .home .container .row .home-contents .question-box .button-boxes .notifocation-box span {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .home {
-    padding: 0 !important;
-  }
-  .home .container .row .home-contents {
-    padding: 19px !important;
-  }
-}
-
 .home {
   position: relative;
   margin-top: 80px;
@@ -399,5 +364,265 @@ li {
 
 .home .w-55px {
   width: 55px;
+}
+
+.register {
+  margin-top: 130px;
+}
+
+.register h3 {
+  font-weight: bold;
+}
+
+.register .border-register {
+  border-right: 1px solid #F2F2F2 !important;
+}
+
+.register form {
+  width: 65%;
+  height: 100%;
+}
+
+.register form .show-hide-pass {
+  width: 100%;
+  position: relative;
+}
+
+.register form .show-hide-pass i {
+  position: absolute;
+  top: 23px;
+  right: 10px;
+}
+
+.register form .show-hide-pass .pass-msg {
+  font-size: 12px;
+}
+
+.register form input {
+  background-color: #F6F8FE;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: none;
+  margin-top: 15px;
+  padding: 7px 0 7px 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.register form input::-webkit-input-placeholder {
+  font-size: 13px;
+}
+
+.register form input:-ms-input-placeholder {
+  font-size: 13px;
+}
+
+.register form input::-ms-input-placeholder {
+  font-size: 13px;
+}
+
+.register form input::placeholder {
+  font-size: 13px;
+}
+
+.register form .login {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 7px 0 7px 10px;
+  background-color: #586EFF;
+  color: #fff;
+  text-align: center;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+  border: none;
+}
+
+.register form .login:hover {
+  letter-spacing: 2px;
+}
+
+.register form select {
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 3px 0 3px 10px;
+  background-color: #F6F8FE;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  outline: none;
+}
+
+.register form span.loginwith {
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.register form span.loginwith::before {
+  content: "";
+  display: inline-block;
+  width: 42%;
+  height: 1px;
+  background: #ABAABA;
+  vertical-align: middle;
+  margin-right: 3%;
+}
+
+.register form span.loginwith::after {
+  content: "";
+  display: inline-block;
+  width: 45%;
+  height: 1px;
+  background: #ABAABA;
+  vertical-align: middle;
+  margin-left: 3%;
+}
+
+.register form label {
+  margin-top: 12px;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.register form label span {
+  color: #586EFF;
+}
+
+.about {
+  margin-top: 100px;
+}
+
+.about .map-area-frame {
+  height: 400px;
+}
+
+.about .map-area-frame iframe {
+  height: 100%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.discover {
+  margin-top: 100px;
+}
+
+.contact {
+  margin-top: 100px;
+  padding: 0 50px;
+  margin-bottom: 30px;
+}
+
+.contact h3 {
+  font-weight: bold;
+}
+
+.contact h6 {
+  font-weight: bold;
+}
+
+.contact p {
+  font-size: 13px;
+}
+
+.contact .social-box-contact {
+  width: 20%;
+}
+
+.contact .form-contact .error-input input {
+  width: 100%;
+  border: 1px solid #FF5858;
+}
+
+.contact .form-contact .error-input input::-webkit-input-placeholder {
+  color: #FF5858;
+}
+
+.contact .form-contact .error-input input:-ms-input-placeholder {
+  color: #FF5858;
+}
+
+.contact .form-contact .error-input input::-ms-input-placeholder {
+  color: #FF5858;
+}
+
+.contact .form-contact .error-input input::placeholder {
+  color: #FF5858;
+}
+
+.contact .form-contact input {
+  background-color: #F6F8FE;
+  border: none;
+  outline: none;
+  padding: 10px 0 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-size: 13px;
+}
+
+.contact .form-contact .form-control {
+  background-color: #F6F8FE;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-top: 10px;
+  height: 295px;
+  resize: none;
+  border: none;
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+.contact .form-contact button {
+  border: none;
+  background-color: #586EFF;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: #fff;
+  padding: 7px 15px;
+  font-size: 13px;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+}
+
+.contact .form-contact button:hover {
+  letter-spacing: 2px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,6 @@
 @import "_variable.scss";
 @import "_reset.scss";
 @import "_mixin.scss";
-@import "_responsive.scss";
 .home {
     position: relative;
     margin-top: 80px;
@@ -273,5 +272,175 @@
     }
     .w-55px {
         width: 55px;
+    }
+}
+
+.register {
+    margin-top: 130px;
+    h3 {
+        font-weight: bold;
+    }
+    .border-register {
+        border-right: 1px solid $border-color !important;
+    }
+    form {
+        width: 65%;
+        height: 100%;
+        .show-hide-pass {
+            width: 100%;
+            position: relative;
+            i {
+                position: absolute;
+                top: 23px;
+                right: 10px;
+            }
+            .pass-msg {
+                font-size: 12px;
+            }
+        }
+        input {
+            background-color: $col-bg;
+            @include border-radius-5;
+            border: none;
+            margin-top: 15px;
+            padding: 7px 0 7px 10px;
+            outline: none;
+            font-size: 14px;
+            &::placeholder {
+                font-size: 13px;
+            }
+        }
+        .login {
+            @include border-radius-5;
+            padding: 7px 0 7px 10px;
+            background-color: $purple;
+            color: $white;
+            text-align: center;
+            @include transition;
+            border: none;
+            &:hover {
+                letter-spacing: 2px;
+            }
+        }
+        select {
+            font-size: 14px;
+            margin-top: 10px;
+            padding: 3px 0 3px 10px;
+            background-color: $col-bg;
+            border: none;
+            @include border-radius-5;
+            outline: none;
+        }
+        span.loginwith {
+            display: block;
+            width: 100%;
+            margin-top: 1em;
+            white-space: nowrap;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 42%;
+                height: 1px;
+                background: $gray;
+                vertical-align: middle;
+                margin-right: 3%;
+            }
+            &::after {
+                content: "";
+                display: inline-block;
+                width: 45%;
+                height: 1px;
+                background: $gray;
+                vertical-align: middle;
+                margin-left: 3%;
+            }
+        }
+        label {
+            margin-top: 12px;
+            margin-left: 5px;
+            font-size: 14px;
+            span {
+                color: $purple;
+            }
+        }
+    }
+}
+
+.about {
+    margin-top: 100px;
+    .map-area-frame {
+        height: 400px;
+        iframe {
+            height: 100%;
+            @include border-radius-5;
+        }
+    }
+}
+
+.discover {
+    margin-top: 100px;
+}
+
+.contact {
+    margin-top: 100px;
+    padding: 0 50px;
+    margin-bottom: 30px;
+    h3 {
+        font-weight: bold;
+    }
+    h6 {
+        font-weight: bold;
+    }
+    p {
+        font-size: 13px;
+    }
+    .social-box-contact {
+        width: 20%;
+    }
+    .form-contact {
+        .error-input {
+            input {
+                width: 100%;
+                border: 1px solid $red;
+                &::placeholder {
+                    color: $red
+                }
+            }
+        }
+        input {
+            background-color: $col-bg;
+            border: none;
+            outline: none;
+            padding: 10px 0 10px 20px;
+            margin-top: 10px;
+            @include border-radius-5;
+            font-size: 13px;
+        }
+        .form-control {
+            background-color: $col-bg;
+            @include border-radius-5;
+            margin-top: 10px;
+            height: 295px;
+            resize: none;
+            border: none;
+            padding-top: 10px;
+            font-size: 13px;
+        }
+        button {
+            border: none;
+            background-color: $purple;
+            @include border-radius-5;
+            color: $white;
+            padding: 7px 15px;
+            font-size: 13px;
+            @include transition;
+            &:hover {
+                letter-spacing: 2px;
+            }
+        }
     }
 }

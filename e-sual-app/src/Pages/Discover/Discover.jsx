@@ -1,5 +1,5 @@
 import React from 'react'
-import './Components/scss/style.css'
+import '../../style/style.css'
 
 export default function Discover() {
   return (

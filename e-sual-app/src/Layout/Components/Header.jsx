@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import '../Components/scss/style.css'
-import Logo from './images/logo.png'
+import '../Components/scss/style.css' 
 import {NavLink} from 'react-router-dom'
 
 class Header extends Component {
@@ -10,7 +9,7 @@ class Header extends Component {
         <div className="container-fluid">
           <div className="nav justify-content-between mt-2">
             <div className="brand">
-              <NavLink to="/"><img src={Logo} alt="" /></NavLink>
+              <NavLink to="/"><img src="asessts/images/logo.png" alt="" /></NavLink>
             </div>
             <form action="" className="serach-box pt-3">
               <i className="fa-solid fa-magnifying-glass"></i>

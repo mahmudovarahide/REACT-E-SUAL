@@ -1,6 +1,6 @@
 import React from 'react'
-import './Components/style.css'
-import ProfileImage from './Components/images/Ellipse_1.png'
+import '../../style/style.css'
+import ProfileImage from './image//Ellipse_1.png'
 
 function Home() {
   return (
@@ -194,4 +194,4 @@ function Home() {
     </section>
   )
 }
-export default  Home
+export default Home

@@ -1,10 +1,52 @@
 import React from 'react'
-import './Components/scss/style.css'
-import FacebookCircleImage from './Components/images/facebook-icon-circle-logo-09F32F61FF-seeklogo 1.png'
-import LoginCircleGoogleImage from './Components/images/178-1783296_g-transparent-circle-google-logo 1.png'
+import axios from 'axios'
+import '../../style/style.css'
+import FacebookCircleImage from './image/facebook-icon-circle-logo-09F32F61FF-seeklogo 1.png'
+import LoginCircleGoogleImage from './image/178-1783296_g-transparent-circle-google-logo 1.png'
 
 
 function Login() {
+
+    const [registerData, setRegisterData] = React.useState({})
+    const [loginData,setLoginData]=React.useState({})
+
+    const handleRegister = (e)=>{
+        setRegisterData((prevState)=>({
+            ...prevState,
+            [e.target.name]:e.target.value
+        }))
+    }  
+    const registerUser = (e)=>{
+       
+        const user = {
+            name: registerData.name,
+            email: registerData.email,
+            password: registerData.password
+        }
+        axios.post('http://localhost:5000/auth/register', user)
+        .then(res => {
+            localStorage.setItem('accessToken', res.data.token)
+        })
+        .catch((err)=>console.log(err))
+    }
+
+    const handleLogin = (e)=>{
+        setLoginData((prevState)=>({
+            ...prevState,
+            [e.target.name]:e.target.value
+        }))
+    }
+    console.log(loginData)
+
+    const loginUser = (e) =>{
+        axios.post('http://localhost:5000/auth/login',loginData)
+        .then(res => {
+            console.log(res)
+        })
+        .catch((err)=>console.log(err))
+    }
+
+
     return (
         <section className="register">
             <div className="container">
@@ -12,12 +54,12 @@ function Login() {
                     <div className="col-md-6 border-register d-flex flex-column justify-content-center align-items-center">
                         <form action="" className="d-flex flex-column">
                             <h3 className="text-center">Daxil ol</h3>
-                            <input type="text" placeholder="Email / Username" />
+                            <input type="email" name="email" placeholder="Email / Username" onChange={handleLogin}/>
                             <div className="show-hide-pass">
-                                <input className="w-100" type="password" placeholder="şifrə" id="password" />
+                                <input className="w-100" name="password" type="text" placeholder="şifrə" id="password" onChange={handleLogin}/>
                                 <i id="eye" className="fa-solid fa-eye-slash"></i>
                             </div>
-                            <a href="/" className="login mt-4">Daxil ol</a>
+                            <button type="button" className="login mt-4" onClick={loginUser}>Daxil ol</button>
                             <span className="loginwith">və ya</span>
                             <div className="d-flex justify-content-center mt-3">
                             <a href="/">
@@ -32,20 +74,19 @@ function Login() {
                     <div className="col-md-6 d-flex flex-column justify-content-center align-items-center">
                         <h3 className="text-center">Qeydiyyat</h3>
                         <form action="" className="d-flex flex-column ">
-                            <input type="text" placeholder="Username" required />
-                            <input type="email" placeholder="Email" required />
-                            <input type="datetime" placeholder="Doğum tarixi" required />
-                            <select name="" id="">
-                                <option value="">cinsiyyət</option>
-                                <option value="">cinsiyyət</option>
-                                <option value="">cinsiyyət</option>
+                            <input type="text" name="name" placeholder="Username" required onChange={handleRegister}/>
+                            <input type="email" placeholder="Email" name="email" required onChange={handleRegister} />
+                            <input type="datetime" placeholder="Doğum tarixi" required name="birthday" onChange={handleRegister}/>
+                            <select name="gender" id="" onChange={handleRegister}>
+                                <option value="man">Kişi</option>
+                                <option value="woman">Qadıns</option> 
                             </select>
                             <div className="show-hide-pass">
-                                <input className="w-100" type="password" placeholder="şifrə" id="password2" />
+                                <input className="w-100" type="password" placeholder="şifrə" id="password2" name="password" onChange={handleRegister}/>
                                 <i id="eye2" className="fa-solid fa-eye-slash"></i>
                             </div>
                             <div className="show-hide-pass">
-                                <input className="w-100" type="password" placeholder="şifrənin təkrarı" id="password3" />
+                                <input className="w-100" type="password" placeholder="şifrənin təkrarı" id="password3" name="confirmPassword" onChange={handleRegister}/>
                                 <i id="eye3" className="fa-solid fa-eye-slash"></i>
                                 <div className="pass-msg my-3"></div>
                             </div>
@@ -54,7 +95,7 @@ function Login() {
                                 <label><span>İstifadəçi şərtlərini </span> oxudum
                                     və qəbul edirəm</label>
                             </div>
-                            <a href="/" type="submit" className="login mt-4">Qeydiyyatdan keç</a>
+                            <button type="button" className="login mt-4"  onClick={registerUser}>Qeydiyyatdan keç</button>
                             <span className="loginwith">və ya</span>
                             <div className="d-flex justify-content-center mt-3">
                                 <a href="/">

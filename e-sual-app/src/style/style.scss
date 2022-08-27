@@ -2,6 +2,28 @@
 @import "_reset.scss";
 @import "_mixin.scss";
 @import "_responsive.scss";
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $loader-color;
+    z-index: 100000000;
+    opacity: 1;
+    overflow: hidden;
+    text-align: center;
+    .position-center-center {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+
 .header {
     border-bottom: 1px solid $border-color;
     @include position-fixed-top;

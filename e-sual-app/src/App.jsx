@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from './layout/layout'
+import Loader from "././pages/loader/loader"
 import Routers  from './router/router'
 import Auth from './components/auth'
 import { useSelector } from 'react-redux'
@@ -11,7 +12,7 @@ function App() {
   return (
     <Auth>
       {
-        !isAuthenticated && <p>Loading</p>
+        !isAuthenticated && <Loader/>
       }
      {
       isAuthenticated &&  <Layout>

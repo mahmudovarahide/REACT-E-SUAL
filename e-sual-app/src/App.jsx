@@ -1,15 +1,24 @@
 import React from 'react'
-import Layout from './Layout/Layout'
-import {useRoutes} from 'react-router-dom'
-import { mainRouters } from './Router/Router'
+import Layout from './layout/layout'
+import Routers  from './router/router'
+import Auth from './components/auth'
+import { useSelector } from 'react-redux'
 
 
 function App() {
-    const routers = useRoutes(mainRouters);
+    const {isAuthenticated} = useSelector(store => store.auth)
+    
   return (
-    <Layout>
-        {routers}
-    </Layout>
+    <Auth>
+      {
+        !isAuthenticated && <p>Loading</p>
+      }
+     {
+      isAuthenticated &&  <Layout>
+        <Routers/>
+      </Layout>
+     }
+    </Auth>
   )
 }
 export default App;

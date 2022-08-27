@@ -1,50 +1,88 @@
 import React from 'react'
-import axios from 'axios'
+import axios from '../../utilities/axios'
 import '../../style/style.css'
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import swal from 'sweetalert';
+import { useNavigate } from 'react-router-dom';
+import { LogIn } from '../../store/slices/auth';
+import { useDispatch } from 'react-redux';
 import FacebookCircleImage from './image/facebook-icon-circle-logo-09F32F61FF-seeklogo 1.png'
 import LoginCircleGoogleImage from './image/178-1783296_g-transparent-circle-google-logo 1.png'
 
+const validationSchema = Yup.object().shape({
+    email: Yup.string()
+        .max(255)
+        .required("Email daxil olunmayıb"),
+    password: Yup.string().min(8, "Şifrə minimum 8 simvoldan ibarət olmalıdır").max(255).required("Parol daxil olunmayıb"),
+});
 
 function Login() {
 
-    const [registerData, setRegisterData] = React.useState({})
-    const [loginData,setLoginData]=React.useState({})
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    
+    const formik = useFormik({
+        initialValues: {
+            email: "",
+            password: "",
+        },
+        validationSchema,
+        onSubmit: (values) => {
+            axios.post('login', { email: values.email, password: values.password })
+                .then(({ data }) => {
+                    localStorage.setItem(
+                        'access_token',
+                        data.access_token, 
+                    );
+                    dispatch( LogIn(
+                        {
+                            isAuthenticated: true,
+                            isInitialized: true,
+                            user: {
+                                name: data.name
+                            }
+                        }
+                    ))
+                    swal("Hesabınıza daxil oldunuz!", "Düyməyə klikləyin", "success") 
 
-    const handleRegister = (e)=>{
-        setRegisterData((prevState)=>({
-            ...prevState,
-            [e.target.name]:e.target.value
-        }))
-    }  
-    const registerUser = (e)=>{
-       
-        const user = {
-            name: registerData.name,
-            email: registerData.email,
-            password: registerData.password
-        }
-        axios.post('http://localhost:5000/auth/register', user)
-        .then(res => {
-            localStorage.setItem('accessToken', res.data.token)
-        })
-        .catch((err)=>console.log(err))
-    }
+                })
+                .catch(({ response }) => {
+                    formik.setErrors({
+                        email: response.data.message,
+                        password: response.data.message
+                    })
+                })
+        },
+    });
 
-    const handleLogin = (e)=>{
-        setLoginData((prevState)=>({
-            ...prevState,
-            [e.target.name]:e.target.value
-        }))
-    }
-    console.log(loginData)
+    const formikRegister=useFormik({
+        initialValues: {
+            username:"",
+            email: "",
+            dob:"",
+            gender:"",
+            password: "",
+        },
+        onSubmit: (values) => {
+            axios.post('register', {...values, name: values.username})
+            .then(({ data }) => {
+                dispatch( LogIn(
+                    {
+                        isAuthenticated: true,
+                        isInitialized: true,
+                        user: data.data
+                    }
+                ))
+            })
+            .catch(({ response }) => {
+                 //errr
+            })
+        },
+    })
 
-    const loginUser = (e) =>{
-        axios.post('http://localhost:5000/auth/login',loginData)
-        .then(res => {
-            console.log(res)
-        })
-        .catch((err)=>console.log(err))
-    }
+
+    
 
 
     return (
@@ -52,17 +90,28 @@ function Login() {
             <div className="container">
                 <div className="row g-5">
                     <div className="col-md-6 border-register d-flex flex-column justify-content-center align-items-center">
-                        <form action="" className="d-flex flex-column">
+                        <form onSubmit={formik.handleSubmit} className="d-flex flex-column">
                             <h3 className="text-center">Daxil ol</h3>
-                            <input type="email" name="email" placeholder="Email / Username" onChange={handleLogin}/>
+                            <div>
+                                <input type="text" name="email" placeholder="Email / Username"   {...formik.getFieldProps("email")} className={`w-100 ${Boolean(formik.errors.email) && formik.touched.email ? "bg-light text-dark" : ""}`} />
+                                {
+                                    Boolean(formik.errors.email) && formik.touched.email &&
+                                    <span className="d-block text-danger" style={{ fontSize: 12, marginTop: 5 }}>{formik.errors.email}</span>
+                                }
+                            </div>
                             <div className="show-hide-pass">
-                                <input className="w-100" name="password" type="text" placeholder="şifrə" id="password" onChange={handleLogin}/>
+                                <input name="password" type="password" placeholder="şifrə" id="password" {...formik.getFieldProps("password")} className={`w-100 ${Boolean(formik.errors.password) && formik.touched.password ? "bg-light text-dark" : ""}`} />
                                 <i id="eye" className="fa-solid fa-eye-slash"></i>
                             </div>
-                            <button type="button" className="login mt-4" onClick={loginUser}>Daxil ol</button>
+                            {
+                                Boolean(formik.errors.password) && formik.touched.password &&
+                                <span className="d-block text-danger" style={{ fontSize: 12, marginTop: 5 }}>{formik.errors.password}</span>
+                            }
+
+                            <button type="submit" className="login mt-4"  >Daxil ol</button>
                             <span className="loginwith">və ya</span>
                             <div className="d-flex justify-content-center mt-3">
-                            <a href="/">
+                                <a href="/">
                                     <img className="w-75" src={LoginCircleGoogleImage} alt="" />
                                 </a>
                                 <a href="/">
@@ -73,20 +122,20 @@ function Login() {
                     </div>
                     <div className="col-md-6 d-flex flex-column justify-content-center align-items-center">
                         <h3 className="text-center">Qeydiyyat</h3>
-                        <form action="" className="d-flex flex-column ">
-                            <input type="text" name="name" placeholder="Username" required onChange={handleRegister}/>
-                            <input type="email" placeholder="Email" name="email" required onChange={handleRegister} />
-                            <input type="datetime" placeholder="Doğum tarixi" required name="birthday" onChange={handleRegister}/>
-                            <select name="gender" id="" onChange={handleRegister}>
-                                <option value="man">Kişi</option>
-                                <option value="woman">Qadıns</option> 
+                        <form onSubmit={formikRegister.handleSubmit} className="d-flex flex-column ">
+                            <input type="text" name="name" placeholder="Username" required {...formikRegister.getFieldProps("username")}/>
+                            <input type="email" placeholder="Email" name="email" required {...formikRegister.getFieldProps("email")}/>
+                            <input type="datetime" placeholder="Doğum tarixi" required name="birthday" {...formikRegister.getFieldProps("dob")}/>
+                            <select name="gender" id="" {...formikRegister.getFieldProps("gender")}>
+                                <option value="man" >Kişi</option>
+                                <option value="woman" >Qadın</option>
                             </select>
                             <div className="show-hide-pass">
-                                <input className="w-100" type="password" placeholder="şifrə" id="password2" name="password" onChange={handleRegister}/>
+                                <input className="w-100" type="password" placeholder="şifrə" id="password2" name="password" {...formikRegister.getFieldProps("password")}/>
                                 <i id="eye2" className="fa-solid fa-eye-slash"></i>
                             </div>
                             <div className="show-hide-pass">
-                                <input className="w-100" type="password" placeholder="şifrənin təkrarı" id="password3" name="confirmPassword" onChange={handleRegister}/>
+                                <input className="w-100" type="password" placeholder="şifrənin təkrarı" id="password3" name="confirmPassword" />
                                 <i id="eye3" className="fa-solid fa-eye-slash"></i>
                                 <div className="pass-msg my-3"></div>
                             </div>
@@ -95,7 +144,7 @@ function Login() {
                                 <label><span>İstifadəçi şərtlərini </span> oxudum
                                     və qəbul edirəm</label>
                             </div>
-                            <button type="button" className="login mt-4"  onClick={registerUser}>Qeydiyyatdan keç</button>
+                            <button type="submit" className="login mt-4"  >Qeydiyyatdan keç</button>
                             <span className="loginwith">və ya</span>
                             <div className="d-flex justify-content-center mt-3">
                                 <a href="/">

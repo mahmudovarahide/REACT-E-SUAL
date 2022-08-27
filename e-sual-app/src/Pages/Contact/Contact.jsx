@@ -50,9 +50,6 @@ function Contact() {
             <h3 className="pb-4">Əlaqə formu</h3>
             <form action="" className="form-contact d-flex flex-column" ref={form} onSubmit={sendEmail}>
               <input type="text" placeholder="ad / soyad" required name="user_name" />
-              {/* <div className="error-input">
-                <input type="text" placeholder="ad / soyad" required />
-              </div> */}
               <input type="email" placeholder="email" required name="user_email" />
               <input type="tel" placeholder="əlaqə nömrəsi" required name="user_number"/>
               <textarea name="message" className="form-control" id="exampleFormControlTextarea1" placeholder="Qeyd" required></textarea>

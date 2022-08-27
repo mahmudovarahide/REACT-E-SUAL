@@ -1,6 +1,233 @@
 @import "_variable.scss";
 @import "_reset.scss";
 @import "_mixin.scss";
+@import "_responsive.scss";
+.header {
+    border-bottom: 1px solid $border-color;
+    @include position-fixed-top;
+    background-color: $white;
+    z-index: 2;
+    .nav {
+        padding-left: 100px;
+        flex-wrap: nowrap !important;
+        .serach-box {
+            position: relative;
+            i {
+                position: absolute;
+                top: 25px;
+                left: 10px;
+                font-size: 13px;
+                padding-left: 10px;
+            }
+            input {
+                background-color: $col-bg;
+                border: none;
+                border-radius: 50px;
+                -webkit-border-radius: 50px;
+                -moz-border-radius: 50px;
+                -ms-border-radius: 50px;
+                -o-border-radius: 50px;
+                padding: 6px 0 6px 50px;
+                font-size: 14px;
+                outline: none;
+                &::placeholder {
+                    font-size: 13px;
+                }
+            }
+        }
+        ul {
+            .nav-item {
+                .nav-link {
+                    color: $black;
+                    @include transition;
+                    &:hover {
+                        border-bottom: 1px solid $purple;
+                        color: $purple;
+                        transform: translateY(15.5px);
+                        -webkit-transform: translateY(15.5px);
+                        -moz-transform: translateY(15.5px);
+                        -ms-transform: translateY(15.5px);
+                        -o-transform: translateY(15.5px);
+                    }
+                }
+            }
+        }
+        .register {
+            a {
+                color: $black;
+                font-weight: bold;
+                @include transition;
+                &:hover {
+                    color: $purple;
+                }
+            }
+        }
+        .info-user-box {
+            position: relative;
+            padding-top: 10px;
+            padding-left: 5px;
+            border-left: 1px solid $border-color;
+            .image-box--info-user {
+                width: 18%;
+                @include border-radius-50;
+                img {
+                    width: 100%;
+                    @include border-radius-50;
+                }
+            }
+            .text-box {
+                padding-left: 5px;
+                h4 {
+                    padding-top: 12px;
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+            }
+            .info-user-button-box {
+                padding-left: 5px;
+                padding-top: 3px;
+                .user-box {
+                    background-color: $purple;
+                    padding: 5px 10px;
+                    color: $white;
+                    @include border-radius-5;
+                    height: 36px;
+                }
+                .open-info {
+                    margin-left: 4px;
+                    i {
+                        padding: 10px 5px;
+                        background-color: $purple;
+                        @include border-radius-5;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    .mobile-nav-menu {
+        padding-right: 20px;
+        form {
+            position: relative;
+            i {
+                position: absolute;
+                top: 24px;
+                left: 14px;
+            }
+            input {
+                background-color: $col-bg;
+                border: none;
+                border-radius: 50px;
+                -webkit-border-radius: 50px;
+                -moz-border-radius: 50px;
+                -ms-border-radius: 50px;
+                -o-border-radius: 50px;
+                padding: 5px 0px 5px 40px;
+                outline: none;
+            }
+        }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: $white;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 5px;
+            a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: $black;
+                display: block;
+                transition: 0.3s;
+                &:hover {
+                    color: $purple;
+                }
+            }
+            .closebtn {
+                position: absolute;
+                width: 50px;
+                top: 12px;
+                right: 25px;
+                font-size: 30px;
+                margin-left: 50px;
+                border: 1px solid $black;
+                background-color: $white;
+                @include border-radius-50;
+            }
+            .mobile-button-box {
+                padding: 10px 20px;
+                border-bottom: 1px solid $gray;
+                a {
+                    background-color: $purple;
+                    color: $white;
+                    text-align: center;
+                    @include border-radius;
+                }
+            }
+            .social-links-mobile {
+                padding-top: 500px;
+            }
+            .mobile-footer {
+                padding-top: 50px;
+                a {
+                    color: $gray;
+                    font-size: 15px;
+                    text-align: center;
+                }
+            }
+            .mobile-register {
+                background-color: $col-bg;
+                .img-box {
+                    @include border-radius-50;
+                    width: 20%;
+                    padding-top: 10px;
+                    img {
+                        @include border-radius-50;
+                        width: 100%;
+                    }
+                }
+                .profile-names {
+                    h3 {
+                        font-weight: bold;
+                        text-align: start;
+                    }
+                    .green-button-profile {
+                        background-color: $green;
+                        padding: 5px 10px;
+                        color: $white;
+                        border: none;
+                        @include border-radius;
+                    }
+                    .purple-button-profile {
+                        padding: 5px 10px;
+                        color: $white;
+                        border: none;
+                        @include border-radius;
+                        background-color: $purple;
+                        margin-left: 10px;
+                    }
+                }
+            }
+            .mobile-register-exit-button {
+                padding: 0 15px;
+                a {
+                    background-color: $red;
+                    padding: 10px 20px;
+                    color: $white;
+                    width: 100%;
+                    text-align: center;
+                    @include border-radius;
+                }
+            }
+        }
+    }
+}
+
 .home {
     position: relative;
     margin-top: 80px;
@@ -310,6 +537,11 @@
                 font-size: 13px;
             }
         }
+        .input-error-message {
+            border: 1px solid $red !important;
+            background-color: $white !important;
+            color: $black !important;
+        }
         .login {
             @include border-radius-5;
             padding: 7px 0 7px 10px;
@@ -440,6 +672,43 @@
             @include transition;
             &:hover {
                 letter-spacing: 2px;
+            }
+        }
+    }
+}
+
+.footer {
+    padding: 0px 0 20px 0;
+    .container-fluid {
+        padding: 0 30px 0 30px;
+        .row {
+            .col-12 {
+                .d-flex {
+                    ul {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 30px;
+                        li {
+                            list-style: none;
+                            a {
+                                color: $gray;
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 30px;
+                                @include transition;
+                                &:hover {
+                                    color: $purple;
+                                }
+                            }
+                        }
+                    }
+                    a {
+                        color: $gray;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 30px;
+                    }
+                }
             }
         }
     }

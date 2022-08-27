@@ -1,8 +1,15 @@
-import React from 'react'
+import React ,{useState,useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../../style/style.css'
 import ProfileImage from './image//Ellipse_1.png'
 
 function Home() {
+  // const navigate=useNavigate()
+  // useEffect(()=>{
+  //   if(!localStorage.getItem('token')){
+  //     navigate('/login')
+  //   }
+  // },[])
   return (
     <section className="home">
       <div className="container">

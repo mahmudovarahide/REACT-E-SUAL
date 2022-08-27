@@ -1,28 +1,60 @@
-import Home from '../Pages/Home/Home'
-import Contact from '../Pages/Contact/Contact'
-import Discover from '../Pages/Discover/Discover'
-import About from '../Pages/About/About'
-import Login from '../Pages/Login/Login'
+import Home from '../pages/home/home'
+import Contact from '../pages/contact/contact'
+import Discover from '../pages/discover/discover'
+import About from '../pages/about/about'
+import Login from '../pages/login/login'
 
-export const mainRouters = [
+
+import {useRoutes} from 'react-router-dom'
+import { Navigate } from 'react-router';
+import { useSelector } from 'react-redux'
+
+
+const Router = () => {
+
+  const auth = useSelector(store => store.auth)
+
+  const mainRouters = [
     {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: '/discover',
-        element: <Discover />,
-      },
-      {
-        path: '/about',
-        element: <About />,
-      },
-      {
-        path: '/contact',
-        element: <Contact />,
-      },
-      {
-        path: '/login',
-        element: <Login />,
-      },
-]
+      path: '/',
+      element: <Home />,
+    },
+    {
+      path: '/discover',
+      element: <Discover />,
+    },
+    {
+      path: '/about',
+      element: <About />,
+    },
+    {
+      path: '/contact',
+      element: <Contact />,
+    },
+    {
+      path: '*',
+      element: <Navigate to="/" />,
+    }
+  ]
+
+  const authRouter = [
+    {
+      path: '/',
+      element: <Login />,
+    },
+    {
+      path: '*',
+      element: <Navigate to="/" />,
+    }
+  ] 
+  
+
+ const route = useRoutes( auth.isInitialized ? mainRouters : authRouter);
+
+ return (
+  <>{route}</>
+ )
+}
+
+
+export default Router

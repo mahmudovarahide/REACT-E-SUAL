@@ -33,8 +33,14 @@
 }
 
 @media screen and (max-width: 768px) {
+    .header .nav {
+        padding-left: 0px !important;
+    }
     .contact {
         padding: 0 20px !important;
+    }
+    .d-none-res {
+        display: none !important;
     }
 }
 
@@ -46,6 +52,42 @@
                 .home-contents {
                     padding: 19px !important;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .header {
+        .mobile-nav-menu {
+            .brand {
+                padding-top: 7px;
+                width: 26%;
+                img {
+                    width: 100%;
+                }
+            }
+            form {
+                width: 60% !important;
+                input {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .modal-header {
+        .modal-title {
+            right: 135px !important;
+        }
+    }
+    .header {
+        .mobile-nav-menu {
+            .brand {
+                padding-top: 8px;
+                width: 30%;
             }
         }
     }

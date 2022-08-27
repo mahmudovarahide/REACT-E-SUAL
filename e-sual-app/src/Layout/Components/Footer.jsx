@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../style/style.css'
 import { NavLink } from 'react-router-dom'
 
 function Footer() {
@@ -8,7 +9,7 @@ function Footer() {
         <div className="row">
             <div className="col-12">
                 <div className="d-flex justify-content-between">
-                    <ul>
+                    <ul className="d-none-res">
                         <li><NavLink to="/">Ana səhifə</NavLink></li>
                         <li><NavLink to="/about">Haqqımızda</NavLink></li>
                         <li><a href="/">İstifadəçi şərtləri</a></li>

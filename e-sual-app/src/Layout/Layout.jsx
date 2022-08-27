@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from './Components/Header'
-import Footer from './Components/Footer'
+import Header from './components/header'
+import Footer from './components/footer'
 
 function Layout({ children }) {
     return (

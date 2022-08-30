@@ -40,6 +40,12 @@ li {
   .home .container .row .home-contents .question-box .button-boxes .notifocation-box span {
     display: none;
   }
+  .register form {
+    width: 100% !important;
+  }
+  .d-none-res {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -48,9 +54,6 @@ li {
   }
   .contact {
     padding: 0 20px !important;
-  }
-  .d-none-res {
-    display: none !important;
   }
 }
 
@@ -110,6 +113,41 @@ li {
   transform: translate(-50%, -50%);
 }
 
+.absolute-info-user-open-menu {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  top: 76px;
+  right: 35px;
+  border: 1px solid #586EFF;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: #fff;
+}
+
+.absolute-info-user-open-menu .user-box {
+  background-color: #586EFF;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  height: 36px;
+  border: none;
+  margin-top: 3px;
+}
+
 .header {
   border-bottom: 1px solid #F2F2F2;
   position: fixed;
@@ -132,7 +170,7 @@ li {
 
 .header .nav .serach-box i {
   position: absolute;
-  top: 25px;
+  top: 15px;
   left: 10px;
   font-size: 13px;
   padding-left: 10px;
@@ -202,7 +240,6 @@ li {
 
 .header .nav .info-user-box {
   position: relative;
-  padding-top: 10px;
   padding-left: 5px;
   border-left: 1px solid #F2F2F2;
 }
@@ -236,8 +273,8 @@ li {
 }
 
 .header .nav .info-user-box .info-user-button-box {
-  padding-left: 5px;
-  padding-top: 3px;
+  padding-top: 5px;
+  gap: 4px;
 }
 
 .header .nav .info-user-box .info-user-button-box .user-box {
@@ -250,6 +287,21 @@ li {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   height: 36px;
+  border: none;
+  font-weight: 500;
+}
+
+.header .nav .info-user-box .info-user-button-box .arrow-down-user-button {
+  background-color: #586EFF;
+  padding: 5px 6px;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  height: 36px;
+  border: none;
 }
 
 .header .nav .info-user-box .info-user-button-box .open-info {
@@ -809,10 +861,12 @@ li {
   position: relative;
 }
 
-.register form .show-hide-pass i {
+.register form .show-hide-pass .show-hide-button {
   position: absolute;
   top: 23px;
   right: 10px;
+  border: none;
+  background-color: transparent;
 }
 
 .register form .show-hide-pass .pass-msg {
@@ -1051,6 +1105,45 @@ li {
 
 .contact .form-contact button:hover {
   letter-spacing: 2px;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link {
+  color: #000 !important;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  border: none !important;
+  color: #586EFF !important;
+}
+
+.nav-tabs .nav-item.show .nav-link:hover,
+.nav-tabs .nav-link:hover {
+  border: none !important;
+  outline: none !important;
+}
+
+.filterThree h6 {
+  color: #586EFF;
+}
+
+.filterThree h6 span {
+  color: #000 !important;
+}
+
+.elementFilter li {
+  margin-left: 25px;
+  font-size: 20px;
+}
+
+.elementFilter li:hover {
+  cursor: pointer;
+}
+
+.elementFilter li.active {
+  color: #586EFF;
+  border-bottom: 1.5px solid #586EFF;
 }
 
 .footer {

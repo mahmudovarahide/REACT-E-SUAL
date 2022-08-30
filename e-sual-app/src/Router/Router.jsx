@@ -3,6 +3,7 @@ import Contact from '../pages/contact/contact'
 import Discover from '../pages/discover/discover'
 import About from '../pages/about/about'
 import Login from '../pages/login/login'
+import Profile from '../pages/profile/profile'
 
 
 import {useRoutes} from 'react-router-dom'
@@ -30,6 +31,10 @@ const Router = () => {
     {
       path: '/contact',
       element: <Contact />,
+    },
+    {
+      path: '/profile',
+      element: <Profile />,
     },
     {
       path: '*',

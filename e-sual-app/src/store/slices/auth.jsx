@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';  
 
 const initialState = {
-    isAuthenticated: false, // request gedib yoxsa yox
-    isInitialized: false, // istifadeci varmi ?
-    user: null, // istifaceci datalari
+    isAuthenticated: false,
+    isInitialized: false,
+    user: null,
 };
 
 const authSlice = createSlice({
@@ -20,11 +20,16 @@ const authSlice = createSlice({
       state.isInitialized = false
       state.user = null
     },
+    RegisterAuth(state, action){
+      state.isAuthenticated = action.payload.isAuthenticated
+      state.isInitialized = action.payload.isInitialized
+      state.user = action.payload.user
+  },
     authInit(state,action){
       state.isAuthenticated = action.payload.isAuthenticated
     } 
   },
 });
 
-export const { LogIn, logOut, authInit} = authSlice.actions;
+export const { LogIn, logOut,RegisterAuth,authInit} = authSlice.actions;
 export default authSlice.reducer;

@@ -30,6 +30,14 @@
             }
         }
     }
+    .register {
+        form {
+            width: 100% !important;
+        }
+    }
+    .d-none-res {
+        display: none !important;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -38,9 +46,6 @@
     }
     .contact {
         padding: 0 20px !important;
-    }
-    .d-none-res {
-        display: none !important;
     }
 }
 

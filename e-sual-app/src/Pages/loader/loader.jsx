@@ -5,7 +5,7 @@ import '../../style/style.css'
 function Loader() {
   return (
     <div id="loader">
-        <div class="position-center-center">
+        <div className="position-center-center">
             <img src={Loading} alt="" />
         </div>
     </div>

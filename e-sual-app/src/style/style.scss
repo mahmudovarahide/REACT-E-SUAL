@@ -24,6 +24,27 @@
     }
 }
 
+.absolute-info-user-open-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 76px;
+    right: 35px;
+    border: 1px solid $purple;
+    padding: 10px;
+    @include border-radius-5;
+    background-color: $white;
+    .user-box {
+        background-color: $purple;
+        padding: 5px 10px;
+        color: $white;
+        @include border-radius-5;
+        height: 36px;
+        border: none;
+        margin-top: 3px;
+    }
+}
+
 .header {
     border-bottom: 1px solid $border-color;
     @include position-fixed-top;
@@ -36,7 +57,7 @@
             position: relative;
             i {
                 position: absolute;
-                top: 25px;
+                top: 15px;
                 left: 10px;
                 font-size: 13px;
                 padding-left: 10px;
@@ -86,7 +107,6 @@
         }
         .info-user-box {
             position: relative;
-            padding-top: 10px;
             padding-left: 5px;
             border-left: 1px solid $border-color;
             .image-box--info-user {
@@ -106,14 +126,24 @@
                 }
             }
             .info-user-button-box {
-                padding-left: 5px;
-                padding-top: 3px;
+                padding-top: 5px;
+                gap: 4px;
                 .user-box {
                     background-color: $purple;
                     padding: 5px 10px;
                     color: $white;
                     @include border-radius-5;
                     height: 36px;
+                    border: none;
+                    font-weight: 500;
+                }
+                .arrow-down-user-button {
+                    background-color: $purple;
+                    padding: 5px 6px;
+                    color: $white;
+                    @include border-radius-5;
+                    height: 36px;
+                    border: none;
                 }
                 .open-info {
                     margin-left: 4px;
@@ -538,10 +568,12 @@
         .show-hide-pass {
             width: 100%;
             position: relative;
-            i {
+            .show-hide-button {
                 position: absolute;
                 top: 23px;
                 right: 10px;
+                border: none;
+                background-color: transparent;
             }
             .pass-msg {
                 font-size: 12px;
@@ -695,6 +727,54 @@
             &:hover {
                 letter-spacing: 2px;
             }
+        }
+    }
+}
+
+.nav-tabs {
+    .nav-item.show .nav-link,
+    .nav-link {
+        color: $black !important;
+    }
+}
+
+.nav-tabs {
+    .nav-item.show .nav-link,
+    .nav-link.active {
+        border: none !important;
+        color: $purple !important;
+    }
+}
+
+.nav-tabs {
+    .nav-item.show .nav-link,
+    .nav-link {
+        &:hover {
+            border: none !important;
+            outline: none !important;
+        }
+    }
+}
+
+.filterThree {
+    h6 {
+        color: $purple;
+        span {
+            color: $black !important;
+        }
+    }
+}
+
+.elementFilter {
+    li {
+        margin-left: 25px;
+        font-size: 20px;
+        &:hover {
+            cursor: pointer;
+        }
+        &.active {
+            color: $purple;
+            border-bottom: 1.5px solid $purple;
         }
     }
 }

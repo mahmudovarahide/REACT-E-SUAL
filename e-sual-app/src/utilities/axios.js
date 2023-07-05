@@ -17,5 +17,4 @@ axiosInt.interceptors.response.use(
         (error.response && error.response.data) || "There is an error!"
     )
 );
-
 export default axiosInt;
